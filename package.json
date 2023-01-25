@@ -2,6 +2,7 @@
   "name": "albums",
   "version": "0.1.0",
   "private": true,
+  "homepage":"https://stantheguru.github.io/",
   "dependencies": {
     "@heroicons/react": "^2.0.13",
     "@material-ui/core": "^4.12.4",
@@ -32,6 +33,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+    
   },
   "eslintConfig": {
     "extends": [
