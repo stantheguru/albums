@@ -1,5 +1,5 @@
-import React, {  useState, useEffect, useRef } from "react";
-import { Container, Row } from "react-materialize";
+import React, {  useState, useEffect } from "react";
+import { Container } from "react-materialize";
 import { UserCard } from "./UserCard";
 
 

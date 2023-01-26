@@ -4,7 +4,6 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import avatar from '../assets/avatar.png'
-import { NavItem } from "react-materialize";
 
 
 

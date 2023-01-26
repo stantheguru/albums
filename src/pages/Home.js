@@ -1,12 +1,8 @@
 import 'materialize-css/dist/css/materialize.min.css';
 import background from '../assets/background.jpg'
-import ReactDOM from 'react-dom';
 import FacebookLogin from 'react-facebook-login';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-
-
 
 
 function Home() {

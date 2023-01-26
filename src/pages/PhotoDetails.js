@@ -1,11 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Container, Row } from "react-materialize";
-import { PhotoCard } from "./PhotoCard";
-import cover from '../assets/cover.jpg'
+import React, { useState, useEffect } from "react";
+import { Container } from "react-materialize";
 import { useNavigate } from "react-router-dom";
-
-
-
 
 
 export default function PhotoDetails() {

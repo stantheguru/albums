@@ -3,9 +3,6 @@ import { Card } from "react-bootstrap";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import cover from '../assets/cover.jpg'
-import { NavItem } from "react-materialize";
-
 
 
 export const PhotoCard = ({ photo }) => {

@@ -1,9 +1,6 @@
 import Main from './pages/Main';
 import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useRoutes,
+  BrowserRouter as Router
 } from "react-router-dom";
 
 
