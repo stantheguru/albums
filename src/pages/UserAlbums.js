@@ -78,7 +78,7 @@ export default function UserAlbums() {
           <p> Email: {user.email}</p>
         </div>
         <div class="card-action">
-          <a href="#" onClick={() => navigate(`/users`)} >BACK</a>
+          <a href="/users" onClick={() => navigate(`/users`)} >BACK</a>
         </div>
       </div>
     </div>

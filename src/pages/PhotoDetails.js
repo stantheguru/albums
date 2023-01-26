@@ -102,7 +102,7 @@ export default function PhotoDetails() {
                             </div>
                             <div class="card-action">
                                 <a onClick={() => navigate(`/albums/${data.albumId}/photos`)} href="">BACK</a>
-                                <a href="#" class="btn btn primary" onClick={updateTitle} >UPDATE TITLE</a>
+                                <button  class="btn btn primary" onClick={updateTitle} >UPDATE TITLE</button>
                             </div>
                         </div>
                     </div>

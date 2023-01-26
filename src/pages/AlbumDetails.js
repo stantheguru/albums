@@ -83,7 +83,7 @@ function fetchPhotos() {
           <p>Album Title: {album_data.title}</p>
         </div>
         <div class="card-action">
-          <a onClick={() => navigate(`/albums`)} href="#" >BACK</a>
+          <a onClick={() => navigate(`/albums`)} href="/albums" >BACK</a>
         </div>
       </div>
     </div>

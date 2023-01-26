@@ -8,6 +8,7 @@ import avatar from '../assets/avatar.png'
 
 
 export const UserCard = ({ user }) => {
+  var link = "/users/"+user.id+"/albums";
   const navigate = useNavigate();
   return (
   <motion.div
@@ -94,7 +95,7 @@ export const UserCard = ({ user }) => {
       
        
       }}>
-        <a href="#" onClick={() => navigate(`/users/${user.id}/albums`)} class="waves-effect waves-light right btn-small"><i class="material-icons left">visibility</i>View User</a>
+        <a href={link} onClick={() => navigate(`/users/${user.id}/albums`)} class="waves-effect waves-light right btn-small"><i class="material-icons left">visibility</i>View User</a>
 
         </div>
       <Card.Body>
