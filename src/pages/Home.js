@@ -46,7 +46,7 @@ function Home() {
                             {localStorage.getItem("name") == null ?
                                 <FacebookLogin
                                     style={buttonStyle}
-                                    appId="423586466503883"
+                                    appId="556306439748927"
                                     fields="name,email,picture"
                                     scope="public_profile,user_friends"
                                     callback={responseFacebook}
