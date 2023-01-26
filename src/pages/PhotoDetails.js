@@ -77,6 +77,7 @@ export default function PhotoDetails() {
           }
         fetchPhoto()
 
+        var link = "/albums/"+data.albumId+"/photos";
 
 
     return (
@@ -101,7 +102,7 @@ export default function PhotoDetails() {
                                
                             </div>
                             <div class="card-action">
-                                <a onClick={() => navigate(`/albums/${data.albumId}/photos`)} href="">BACK</a>
+                                <a onClick={() => navigate(`/albums/${data.albumId}/photos`)} href={link}>BACK</a>
                                 <button  class="btn btn primary" onClick={updateTitle} >UPDATE TITLE</button>
                             </div>
                         </div>
