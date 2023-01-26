@@ -5,7 +5,7 @@ This project was created with react js and materizlize css by Google
 ## Available Scripts
 
 Git clone the project and run:
-### `npm install` to install dependencies. In case it fails, use npm install --force.
+### `npm install` to install dependencies. In case it fails, use `npm install --force`.
 
 ### `npm start` to start the app.
 
