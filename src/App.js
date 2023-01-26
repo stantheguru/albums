@@ -10,7 +10,7 @@ import {
 function App() {
 
   return (
-    <Router>
+    <Router basename="/albums">
     <Main />
   </Router>
   );
