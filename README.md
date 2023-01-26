@@ -4,9 +4,10 @@ This project was created with react js and materizlize css by Google
 
 ## Available Scripts
 
-In the project directory, you can run:
+Git clone the project and run:
+### `npm install` to install dependencies. In case it fails, use npm install --force.
 
-### `npm start`
+### `npm start` to start the app.
 
 
 ### Authentication
