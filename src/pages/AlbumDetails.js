@@ -1,8 +1,11 @@
-import React, {  useState } from "react";
+import React, {  useState, useEffect } from "react";
 import { Container, Row } from "react-materialize";
 import { PhotoCard } from "./PhotoCard";
 import cover from '../assets/cover.jpg'
 import { useNavigate } from "react-router-dom";
+
+
+
 
 
 export default function AlbumDetails() {
@@ -12,60 +15,38 @@ export default function AlbumDetails() {
 
 
     const [data, setData] = useState([]);
- 
+
     const [album_data, setAlbum] = useState({});
     
 
-    function fetchAlbum() {
-        var url = window.location.toString()
-        
-        var index = url.lastIndexOf("albums")
-        var index2 = url.lastIndexOf("/")
-        var album_id = url.substring(index+7, index2)
-            try{
     
-                fetch('https://jsonplaceholder.typicode.com/albums')
+/* eslint eqeqeq: 0 */
 
-            .then(response => response.json())
-            .then(json => setAlbum(json.filter((o) => o["id"] === album_id)[0]))
-              
-               //setTitle(json.title)
-             
-               //alert(title)
-               fetchPhotos()
-            }catch(e){
-                //alert(e)
-            }
-    }
+
     
-function fetchPhotos() {
-    var url = window.location.toString()
+    useEffect(() => {
+      if(localStorage.getItem("name")===null){
+        window.location.replace('/');
+      }
+      var url = window.location.toString()
     
-    var index = url.lastIndexOf("albums")
-        var index2 = url.lastIndexOf("/")
-        var album_id = url.substring(index+7, index2)
+      var index = url.lastIndexOf("albums")
+          var index2 = url.lastIndexOf("/")
+          var album_id = url.substring(index+7, index2)
+      fetch('https://jsonplaceholder.typicode.com/albums')
+
+      .then(response => response.json())
+      .then(json => setAlbum(json.filter((o) => o["id"] === album_id)[0].toString()))
         
-        try{ 
-        fetch(`https://jsonplaceholder.typicode.com/albums/${album_id}/photos`)
+         //setTitle(json.title)
+         //alert(title)
+         fetch(`https://jsonplaceholder.typicode.com/albums/${album_id}/photos`)
 
             .then(response => response.json())
             .then(json => setData(json))
             //alert(album_data)
-            
-           
-        }catch(e){
-            //alert(e)
-        }
-    }
-
-
-
-      if(localStorage.getItem("name")==null){
-        window.location.replace('/');
-      }
-        fetchAlbum()
         
-        
+    }, [])
 
   return (
     <>
@@ -83,7 +64,7 @@ function fetchPhotos() {
           <p>Album Title: {album_data.title}</p>
         </div>
         <div class="card-action">
-          <a onClick={() => navigate(`/albums`)} href="/albums" >BACK</a>
+          <a onClick={() => navigate(`/albums`)} href="/albums">BACK</a>
         </div>
       </div>
     </div>

@@ -41,7 +41,7 @@ export default function UserAlbums() {
             fetch('https://jsonplaceholder.typicode.com/users')
     
                 .then(response => response.json())
-                .then(json => setUser(json.filter((o) => o["id"] === id)[0]))
+                .then(json => setUser(json.filter((o) => o["id"].toString() === id)[0]))
                 //alert(JSON.stringify(user))
                 fetchAlbums()
                 

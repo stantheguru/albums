@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "react-materialize";
 import { useNavigate } from "react-router-dom";
 
@@ -19,7 +19,10 @@ export default function PhotoDetails() {
     };
 
 
-    function fetchPhoto() {
+    useEffect(() => {
+        if(localStorage.getItem("name")===null){
+            window.location.replace('/');
+          }
         var url = window.location.toString()
 
         var index = url.lastIndexOf("/")
@@ -29,17 +32,18 @@ export default function PhotoDetails() {
             fetch('https://jsonplaceholder.typicode.com/photos')
 
                 .then(response => response.json())
-                .then(json => setPhoto(json.filter((o) => o["id"] === photo_id)[0]))
-            setID(data.id)
+                .then(json => setPhoto(json.filter((o) => o["id"].toString() === photo_id)[0]))
+            
             
 
 
         } catch (e) {
             //alert(e)
         }
-    }
+    },[])
 
     function updateTitle() {
+        setID(data.id)
         if(title === ""){
             alert("Please enter a title")
         }else{
@@ -72,10 +76,7 @@ export default function PhotoDetails() {
 
 
    
-        if(localStorage.getItem("name")===null){
-            window.location.replace('/');
-          }
-        fetchPhoto()
+        
 
         var link = "/albums/"+data.albumId+"/photos";
 
