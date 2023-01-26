@@ -26,7 +26,7 @@ export default function Albums() {
     
     useEffect(() => {
       if(localStorage.getItem("name")==null){
-        window.location.replace('/');
+       // window.location.replace('/');
       }
        
         setWidth(window.innerWidth)

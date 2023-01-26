@@ -2,14 +2,12 @@ import 'materialize-css/dist/css/materialize.min.css';
 import background from '../assets/background.jpg'
 import FacebookLogin from 'react-facebook-login';
 import React from 'react';
-import LoginGithub from 'react-login-github';
 
 
 
 function Home() {
 
-    const onSuccess = response => alert(response);
-    const onFailure = response => console.error(response);
+  
 
     const responseFacebook = (response) => {
 
@@ -63,11 +61,7 @@ function Home() {
                 </div>
 
             </div>
-            <LoginGithub clientId="1b4d850a827348ca45d1
-"
-    onSuccess={onSuccess}
-    onFailure={onFailure}
-  />
+         
 
         </div>
     );
