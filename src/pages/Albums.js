@@ -8,7 +8,6 @@ export default function Albums() {
 
     const [data, setData] = useState([]);
     const [width, setWidth] = useState(1242)
-    const [column, setCol] = useState("col s4")
     
 
     function fetchAlbums() {

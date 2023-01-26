@@ -1,10 +1,8 @@
-import React, {  useState, useEffect } from "react";
+import React, {  useState } from "react";
 import { Container, Row } from "react-materialize";
 import { AlbumCard } from "./AlbumCard";
 import avatar from '../assets/avatar.png'
 import { useNavigate } from "react-router-dom";
-
-
 
 
 export default function UserAlbums() {
@@ -12,9 +10,8 @@ export default function UserAlbums() {
 
     const [data, setData] = useState([]);
     const [user, setUser] = useState({})
-    const [prev, setPrev] = useState("")
-    
-    
+ 
+  
     function fetchAlbums() {
         var url = window.location.toString()     
         var index = url.lastIndexOf("users")
@@ -44,7 +41,7 @@ export default function UserAlbums() {
             fetch('https://jsonplaceholder.typicode.com/users')
     
                 .then(response => response.json())
-                .then(json => setUser(json.filter((o) => o["id"] == id)[0]))
+                .then(json => setUser(json.filter((o) => o["id"] === id)[0]))
                 //alert(JSON.stringify(user))
                 fetchAlbums()
                 
@@ -56,17 +53,15 @@ export default function UserAlbums() {
 
 
     
-    useEffect(() => {
+ 
         
-        if(localStorage.getItem("name")==null){
+        if(localStorage.getItem("name")===null){
             window.location.replace('/');
           }
      
         fetchUser()
         
-        
-    }, [])
-
+     
   return (
     <>
      
@@ -75,7 +70,7 @@ export default function UserAlbums() {
     <h5 class="header">Total Albums: {data.length}</h5>
     <div class="card horizontal">
       <div class="card-image">
-        <img height={145} src={avatar}/>
+        <img alt="image" height={145} src={avatar}/>
       </div>
       <div class="card-stacked">
         <div class="card-content">
@@ -83,7 +78,7 @@ export default function UserAlbums() {
           <p> Email: {user.email}</p>
         </div>
         <div class="card-action">
-          <a onClick={() => navigate(`/users`)} href="">BACK</a>
+          <a onClick={() => navigate(`/users`)} >BACK</a>
         </div>
       </div>
     </div>

@@ -1,11 +1,8 @@
-import React, {  useState, useEffect } from "react";
+import React, {  useState } from "react";
 import { Container, Row } from "react-materialize";
 import { PhotoCard } from "./PhotoCard";
 import cover from '../assets/cover.jpg'
 import { useNavigate } from "react-router-dom";
-
-
-
 
 
 export default function AlbumDetails() {
@@ -15,8 +12,7 @@ export default function AlbumDetails() {
 
 
     const [data, setData] = useState([]);
-    const [width, setWidth] = useState(1242)
-    const [title, setTitle] = useState("")
+ 
     const [album_data, setAlbum] = useState({});
     
 
@@ -31,10 +27,10 @@ export default function AlbumDetails() {
                 fetch('https://jsonplaceholder.typicode.com/albums')
 
             .then(response => response.json())
-            .then(json => setAlbum(json.filter((o) => o["id"] == album_id)[0]))
+            .then(json => setAlbum(json.filter((o) => o["id"] === album_id)[0]))
               
                //setTitle(json.title)
-               setTitle(album_data.title)
+             
                //alert(title)
                fetchPhotos()
             }catch(e){
@@ -49,9 +45,7 @@ function fetchPhotos() {
         var index2 = url.lastIndexOf("/")
         var album_id = url.substring(index+7, index2)
         
-        try{
-
-          
+        try{ 
         fetch(`https://jsonplaceholder.typicode.com/albums/${album_id}/photos`)
 
             .then(response => response.json())
@@ -65,15 +59,13 @@ function fetchPhotos() {
     }
 
 
-    
-    useEffect(() => {
+
       if(localStorage.getItem("name")==null){
         window.location.replace('/');
       }
         fetchAlbum()
         
         
-    }, [])
 
   return (
     <>
@@ -84,14 +76,14 @@ function fetchPhotos() {
     <h5 class="header">Album ID: {album_data.id}</h5>
     <div class="card horizontal">
       <div class="card-image">
-        <img height={145} src={cover}/>
+        <img alt="album" height={145} src={cover}/>
       </div>
       <div class="card-stacked">
         <div class="card-content">
           <p>Album Title: {album_data.title}</p>
         </div>
         <div class="card-action">
-          <a onClick={() => navigate(`/albums`)} href="">BACK</a>
+          <a onClick={() => navigate(`/albums`)} >BACK</a>
         </div>
       </div>
     </div>
@@ -109,7 +101,3 @@ function fetchPhotos() {
   );
 }
 
-const cardStyle={
-width:'7%',
-justifyContent:'center'
-}

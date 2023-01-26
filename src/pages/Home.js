@@ -1,25 +1,17 @@
 import 'materialize-css/dist/css/materialize.min.css';
 import background from '../assets/background.jpg'
 import FacebookLogin from 'react-facebook-login';
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 
 
 function Home() {
 
 
-    const [login, setLogin] = useState(false);
-    const [data, setData] = useState({});
-    const [picture, setPicture] = useState('');
-    const navigate = useNavigate();
-
 
     const responseFacebook = (response) => {
 
-        setData(response);
-        setPicture(response.picture.data.url);
         if (response.accessToken) {
-            setLogin(true);
+          
             localStorage.removeItem("picture")
             localStorage.removeItem("name")
             localStorage.setItem("picture", response.picture.data.url)
@@ -30,7 +22,7 @@ function Home() {
             window.location.replace('/albums');
 
         } else {
-            setLogin(false);
+            
         }
     }
 

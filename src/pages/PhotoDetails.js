@@ -7,10 +7,8 @@ export default function PhotoDetails() {
     const navigate = useNavigate();
 
 
-    const [width, setWidth] = useState(1242)
     const [id, setID] = useState("")
     const [title, setTitle] = useState('');
-    const [new_data, setNewData] = useState({});
 
     const [data, setPhoto] = useState({});
 
@@ -31,7 +29,7 @@ export default function PhotoDetails() {
             fetch('https://jsonplaceholder.typicode.com/photos')
 
                 .then(response => response.json())
-                .then(json => setPhoto(json.filter((o) => o["id"] == photo_id)[0]))
+                .then(json => setPhoto(json.filter((o) => o["id"] === photo_id)[0]))
             setID(data.id)
             
 
@@ -42,7 +40,7 @@ export default function PhotoDetails() {
     }
 
     function updateTitle() {
-        if(title == ""){
+        if(title === ""){
             alert("Please enter a title")
         }else{
         try {
@@ -58,7 +56,7 @@ export default function PhotoDetails() {
                 },
             })
                 .then((response) => response.json())
-                .then((json) => setNewData(json));
+                .then((json) => json);
                     alert("update was successful")
                     navigate(`/albums/${data.albumId}/photos`)
                 
@@ -73,14 +71,13 @@ export default function PhotoDetails() {
 
 
 
-    useEffect(() => {
-        if(localStorage.getItem("name")==null){
+   
+        if(localStorage.getItem("name")===null){
             window.location.replace('/');
           }
         fetchPhoto()
 
 
-    }, [])
 
     return (
         <>
@@ -89,7 +86,7 @@ export default function PhotoDetails() {
                     <h5 class="header">Photo ID: {data.id}</h5>
                     <div class="card horizontal">
                         <div class="card-image">
-                            <img height={400} width={400} src={data.url} />
+                            <img alt="image" height={400} width={400} src={data.url} />
                         </div>
                         <div class="card-stacked">
                             <div class="card-content">
@@ -115,10 +112,7 @@ export default function PhotoDetails() {
     );
 }
 
-const cardStyle = {
-    width: '7%',
-    justifyContent: 'center'
-}
+
 const inputStyle = {
     height: 60
 }
