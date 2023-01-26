@@ -33,7 +33,7 @@ export const PhotoCard = ({ photo }) => {
           src={photo.url}
           width={"100%"}
           height={350}
-          alt="album"
+          alt="photoimg"
           effect="blur"
           style={{ objectFit: "cover" }}
         />

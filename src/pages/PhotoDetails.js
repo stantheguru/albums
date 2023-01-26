@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Container } from "react-materialize";
 import { useNavigate } from "react-router-dom";
 
@@ -86,7 +86,7 @@ export default function PhotoDetails() {
                     <h5 class="header">Photo ID: {data.id}</h5>
                     <div class="card horizontal">
                         <div class="card-image">
-                            <img alt="image" height={400} width={400} src={data.url} />
+                            <img alt="photoimage" height={400} width={400} src={data.url} />
                         </div>
                         <div class="card-stacked">
                             <div class="card-content">
@@ -102,7 +102,7 @@ export default function PhotoDetails() {
                             </div>
                             <div class="card-action">
                                 <a onClick={() => navigate(`/albums/${data.albumId}/photos`)} href="">BACK</a>
-                                <a class="btn btn primary" onClick={updateTitle} >UPDATE TITLE</a>
+                                <a href="#" class="btn btn primary" onClick={updateTitle} >UPDATE TITLE</a>
                             </div>
                         </div>
                     </div>

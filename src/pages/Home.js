@@ -73,11 +73,7 @@ const myStyle = {
     backgroundRepeat: 'no-repeat',
 };
 
-const headerStyle = {
 
-    fontSize: '50px',
-    color: 'white'
-};
 
 const divButton = {
 

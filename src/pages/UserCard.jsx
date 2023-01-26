@@ -94,7 +94,7 @@ export const UserCard = ({ user }) => {
       
        
       }}>
-        <a onClick={() => navigate(`/users/${user.id}/albums`)} class="waves-effect waves-light right btn-small"><i class="material-icons left">visibility</i>View User</a>
+        <a href="#" onClick={() => navigate(`/users/${user.id}/albums`)} class="waves-effect waves-light right btn-small"><i class="material-icons left">visibility</i>View User</a>
 
         </div>
       <Card.Body>

@@ -70,7 +70,7 @@ export default function UserAlbums() {
     <h5 class="header">Total Albums: {data.length}</h5>
     <div class="card horizontal">
       <div class="card-image">
-        <img alt="image" height={145} src={avatar}/>
+        <img alt="cardimage" height={145} src={avatar}/>
       </div>
       <div class="card-stacked">
         <div class="card-content">
@@ -78,7 +78,7 @@ export default function UserAlbums() {
           <p> Email: {user.email}</p>
         </div>
         <div class="card-action">
-          <a onClick={() => navigate(`/users`)} >BACK</a>
+          <a href="#" onClick={() => navigate(`/users`)} >BACK</a>
         </div>
       </div>
     </div>
